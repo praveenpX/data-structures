@@ -34,25 +34,5 @@ namespace Rextester
                 list.Add(arr[i]);
             }
         }
-        
-        public static void PrintPairsNegative(int[] arr, int sum)
-        {
-            int length = arr.Length;
-            
-            HashSet<int> list = new HashSet<int>();
-            
-            for(int i =0; i < length; i++)
-            {
-                int item = Math.Abs(arr[i]);
-                
-                int temp = sum - item;
-                
-                if(temp >= 0 && list.Contains(temp))
-                {
-                    Console.WriteLine("(" + arr[i] + "," + temp + "), ");
-                }
-                list.Add(item);
-            }
-        }
     }
 }
