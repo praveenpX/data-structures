@@ -67,6 +67,9 @@ public class Program
 				j++;
 			}
 		}
+		
+		// If last character is extra  
+    		// in any string 
 
 		if (i < m || j < n)
 			countedits++;
