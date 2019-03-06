@@ -31,7 +31,6 @@ class Solution
         int kthSmallest = arr[k-1];
         
         Console.WriteLine(k + "th smallest: " + kthSmallest);
-            
     }
     
     public static void kthLargest(int[] arr, int k)
@@ -46,11 +45,11 @@ class Solution
             return;
         }
             
-        Array.Sort(arr); //sort the array in ascending order, O(nlogn)
+        Array.Sort(arr); //sort the array in ascending order, O(nlogn); 1,3,5,7
         
-        Array.Reverse(arr); //1,3,5,7; sort the array in descending order
+        Array.Reverse(arr); //1,3,5,7; sort the array in descending order; 7,5,3,1
         
-        int kthLargest = arr[lastIndex - k];
+        int kthLargest = arr[k-1];
         
         Console.WriteLine(k + "th largest: " + kthLargest);
     }
