@@ -64,13 +64,15 @@ class Solution
         {
             if(arr[i] != 0)
             {
-                arr[count++] = arr[i];
+                arr[count] = arr[i];
+                count++;
             }
         }
         
         while(count < length)
         {
-            arr[count++] = 0;
+            arr[count] = 0;
+            count++;
         }
     }
 }
