@@ -80,4 +80,38 @@ public class MeetingRoom
         }
         return true;
     }
+    
+    public void MinimumNumberOfConfRooms(List<Interval> meetings)
+    {
+        IntervalComparer ic = new IntervalComparer();
+        
+        meetings.Sort(ic);
+        
+        int maxOverlap=1;
+        
+        int overlap=0;
+        
+        for(int i=0; i<meetings.Count-1 && overlap+i<meetings.Count-1 ;++i)
+        {
+            int j=i+1;
+            
+            Interval temp=meetings[j];
+            Interval present=meetings[i];
+            overlap=0;
+            
+            while(temp.Start<present.End && j<meetings.Count)
+            {
+                temp=meetings[j];
+                overlap++;
+                ++j;
+                
+                Console.WriteLine("in overlap");
+            }
+            if(overlap+1>maxOverlap)
+            {
+                maxOverlap=overlap+1;
+            }
+        }
+        Console.WriteLine(maxOverlap);
+    }
 }
