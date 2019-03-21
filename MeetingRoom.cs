@@ -68,7 +68,8 @@ public class MeetingRoom
         Array.Sort(startarr);
         Array.Sort(endarr);
         
-        //check to see if the start and end time overlaps
+        //check to see if the start time of next event overlaps
+        //with the end time of current 
         //[0,30], [5, 10]
         for(int j=0; j<length-1; j++)
         {
