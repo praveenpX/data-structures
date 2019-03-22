@@ -81,7 +81,38 @@ public class MeetingRoom
         return true;
     }
     
-    public void MinimumNumberOfConfRooms(List<Interval> meetings)
+    
+    
+    public int MinNumberOfConfRooms(Interval[] intervals)
+    {
+        int length = intervals.Length;
+        
+        IntervalComparer c = new IntervalComparer();
+        
+        Array.Sort(intervals, c);
+        
+        List<Interval> minHeap = new List<Interval>();
+        
+        minHeap.Add(intervals[0]);
+        
+        for(int i=1; i<length; i++)
+        {
+            minHeap.Sort((a,b) => a.End - b.End);
+            
+            if(intervals[i].Start >= minHeap[0].End)
+            {
+                Interval first = minHeap[0];
+                minHeap.Remove(first);
+            }
+            minHeap.Add(intervals[i]);
+        }
+        
+        Console.WriteLine("min number of conf rooms: " + minHeap.Count);
+        
+        return minHeap.Count;
+    }
+    
+    public void MinimumNumberOfConfRoomsdoesntwork(List<Interval> meetings)
     {
         IntervalComparer ic = new IntervalComparer();
         
