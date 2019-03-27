@@ -56,9 +56,9 @@ public class LinkedList
         }
         
         
-        if(slow == fast)
+        if(slow_p == fast_p)
         {
-            slow = node;
+            slow_p = node;
             
             while(slow_p.Next != fast_p.Next)
             {
