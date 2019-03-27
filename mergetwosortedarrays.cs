@@ -41,7 +41,7 @@ class Solution
         
         while(i < length1 && j < length2)
         {
-            if(arr1[i] < arr2[j])
+            if(arr1[i] <= arr2[j])
             {
                 arr3[k] = arr1[i];
                 i++;
