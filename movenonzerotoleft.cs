@@ -20,6 +20,36 @@ public class Program
 			Console.Write(results[i] + " ");
 		}
 	}
+	
+	
+    
+    public static void moveNonZeroToLeft(int[] arr)
+    {
+        int length = arr.Length;
+        
+        int k=0;
+        
+        for(int i=0; i<length; i++)
+        {
+            if(arr[i] != 0)
+            {
+                arr[k] = arr[i];
+                k++;
+            }
+        }
+        
+        while(k < length)
+        {
+            arr[k] = 0;
+            k++;
+        }
+        
+        for(int j=0; j<length; j++)
+        {
+            Console.Write(arr[j] + " ");
+        }
+        
+    }
 
 	public static int[] movenonzerotoleft(int[] arr)
 	{
