@@ -44,9 +44,9 @@ public class LinkedList
         slow_p = node.Next;
         fast_p = node.Next.Next;
         
-        while(fast != null && fast.Next != null)
+        while(fast_p != null && fast_p.Next != null)
         {
-            if(slow == fast)
+            if(slow_p == fast_p)
             {
                 break;
             }
