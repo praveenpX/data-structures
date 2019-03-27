@@ -51,6 +51,22 @@ public class Interval
 
 public class MeetingRoom
 {
+    public bool CanAttendAllMeetings1(Interval[] arr)
+    {
+        int length = arr.Length;
+        
+        Array.Sort(arr, (a,b) => a.Start - b.Start);
+        
+        for(int i=0; i<length -1; i++)
+        {
+            if(arr[i+1].Start < arr[i].End)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     public bool CanAttendAllMeetings(Interval[] arr)
     {
         int length = arr.Length;
